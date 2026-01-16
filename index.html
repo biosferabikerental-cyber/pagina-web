@@ -157,6 +157,49 @@
             color: var(--primary-green);
         }
 
+        /* Chat Icon */
+        .chat-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 119, 190, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 119, 190, 0.4);
+        }
+
+        .chat-icon i {
+            color: var(--white);
+            font-size: 28px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
         /* Hero Section */
         .hero {
             background: 
@@ -3518,6 +3561,12 @@
         </div>
     </footer>
 
+    <!-- Icono del Chat -->
+    <div class="chat-icon" id="chatIcon">
+        <i class="fas fa-comments"></i>
+    </div>
+
+
     <script>
         // Funcionalidad de cambio de idioma
         document.getElementById('lang-es').addEventListener('click', function () {
@@ -4431,89 +4480,103 @@
         // Inicializar el slider de rutas
         initRouteSlider();
 
-        // Form Submission
-        const form = document.getElementById('reservationForm');
+    // Número de WhatsApp de la empresa
+    const whatsappNumber = "34628514368";
 
-        form.addEventListener('submit', function (e) {
+    // Form Submission
+    const form = document.getElementById("reservationForm");
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
             e.preventDefault();
 
             // Obtener los valores del formulario
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const startDate = document.getElementById('startDate').value;
-            const endDate = document.getElementById('endDate').value;
-            const service = document.getElementById('service').value;
+            const name = document.getElementById("name")?.value || "";
+            const email = document.getElementById("email")?.value || "";
+            const phone = document.getElementById("phone")?.value || "";
+            const startDate = document.getElementById("startDate")?.value || "";
+            const endDate = document.getElementById("endDate")?.value || "";
+            const service = document.getElementById("service")?.value || "";
 
-            // Obtener el mensaje según el idioma actual
-            const currentLanguage = document.querySelector('.lang-btn.active').id.split('-')[1];
-            let message = '';
-            if (currentLanguage === 'es') {
-                message = document.getElementById('message').value;
-            } else if (currentLanguage === 'en') {
-                message = document.getElementById('message-en').value;
-            } else if (currentLanguage === 'de') {
-                message = document.getElementById('message-de').value;
-            } else if (currentLanguage === 'fr') {
-                message = document.getElementById('message-fr').value;
-            }
+            // Idioma actual
+            const activeLangBtn = document.querySelector(".lang-btn.active");
+            const currentLanguage = activeLangBtn?.id?.split("-")[1] || "es";
 
-            // Verificar si estamos en español o inglés
-            const isSpanish = currentLanguage === 'es';
-            const isEnglish = currentLanguage === 'en';
-            const isGerman = currentLanguage === 'de';
-            const isFrench = currentLanguage === 'fr';
+            // Mensaje según idioma
+            let message = "";
+            if (currentLanguage === "es") message = document.getElementById("message")?.value || "";
+            else if (currentLanguage === "en") message = document.getElementById("message-en")?.value || "";
+            else if (currentLanguage === "de") message = document.getElementById("message-de")?.value || "";
+            else if (currentLanguage === "fr") message = document.getElementById("message-fr")?.value || "";
 
             // Crear el mensaje para WhatsApp
-            let whatsappMessage = '';
+            let whatsappMessage = "";
 
-            if (isSpanish) {
-                whatsappMessage = `Hola, me gustaría solicitar información/reserva en Biosfera Rental Bike:%0A%0A` +
-                    `*Nombre:* ${name}%0A` +
-                    `*Email:* ${email}%0A` +
-                    `*Teléfono:* ${phone}%0A` +
-                    `*Fechas de alquiler:* ${startDate} - ${endDate}%0A` +
-                    `*Servicio de interés:* ${service}%0A` +
+            if (currentLanguage === "es") {
+                whatsappMessage =
+                    `Hola, me gustaría solicitar información/reserva en Biosfera Rental Bike:\n\n` +
+                    `*Nombre:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Teléfono:* ${phone}\n` +
+                    `*Fechas de alquiler:* ${startDate} - ${endDate}\n` +
+                    `*Servicio de interés:* ${service}\n` +
                     `*Mensaje:* ${message}`;
-            } else if (isEnglish) {
-                whatsappMessage = `Hello, I would like to request information/booking at Biosfera Rental Bike:%0A%0A` +
-                    `*Name:* ${name}%0A` +
-                    `*Email:* ${email}%0A` +
-                    `*Phone:* ${phone}%0A` +
-                    `*Rental dates:* ${startDate} - ${endDate}%0A` +
-                    `*Service of interest:* ${service}%0A` +
+            } else if (currentLanguage === "en") {
+                whatsappMessage =
+                    `Hello, I would like to request information/booking at Biosfera Rental Bike:\n\n` +
+                    `*Name:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Phone:* ${phone}\n` +
+                    `*Rental dates:* ${startDate} - ${endDate}\n` +
+                    `*Service of interest:* ${service}\n` +
                     `*Message:* ${message}`;
-            } else if (isGerman) {
-                whatsappMessage = `Hallo, ich möchte Informationen/Buchung bei Biosfera Rental Bike anfordern:%0A%0A` +
-                    `*Name:* ${name}%0A` +
-                    `*Email:* ${email}%0A` +
-                    `*Telefon:* ${phone}%0A` +
-                    `*Mietdaten:* ${startDate} - ${endDate}%0A` +
-                    `*Interessierter Service:* ${service}%0A` +
+            } else if (currentLanguage === "de") {
+                whatsappMessage =
+                    `Hallo, ich möchte Informationen/Buchung bei Biosfera Rental Bike anfordern:\n\n` +
+                    `*Name:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Telefon:* ${phone}\n` +
+                    `*Mietdaten:* ${startDate} - ${endDate}\n` +
+                    `*Interessierter Service:* ${service}\n` +
                     `*Nachricht:* ${message}`;
-            } else if (isFrench) {
-                whatsappMessage = `Bonjour, je souhaiterais demander des informations/réserver chez Biosfera Rental Bike:%0A%0A` +
-                    `*Nom:* ${name}%0A` +
-                    `*Email:* ${email}%0A` +
-                    `*Téléphone:* ${phone}%0A` +
-                    `*Dates de location:* ${startDate} - ${endDate}%0A` +
-                    `*Service d'intérêt:* ${service}%0A` +
+            } else if (currentLanguage === "fr") {
+                whatsappMessage =
+                    `Bonjour, je souhaiterais demander des informations/réserver chez Biosfera Rental Bike:\n\n` +
+                    `*Nom:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Téléphone:* ${phone}\n` +
+                    `*Dates de location:* ${startDate} - ${endDate}\n` +
+                    `*Service d'intérêt:* ${service}\n` +
                     `*Message:* ${message}`;
+            } else {
+                // fallback
+                whatsappMessage =
+                    `Hola, me gustaría solicitar información/reserva en Biosfera Rental Bike:\n\n` +
+                    `*Nombre:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Teléfono:* ${phone}\n` +
+                    `*Fechas de alquiler:* ${startDate} - ${endDate}\n` +
+                    `*Servicio de interés:* ${service}\n` +
+                    `*Mensaje:* ${message}`;
             }
 
-            // Número de WhatsApp de la empresa
-            const whatsappNumber = '+34628514368';
+            // Crear enlace y abrir WhatsApp con el mensaje
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, "_blank");
 
-            // Crear el enlace de WhatsApp
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-            // Abrir WhatsApp en una nueva ventana/pestaña
-            window.open(whatsappUrl, '_blank');
-
-            // Opcional: Limpiar el formulario después del envío
+            // Limpiar el formulario después del envío
             form.reset();
         });
+    }
 
+    const chatIcon = document.getElementById("chatIcon");
+
+    if (chatIcon) {
+        chatIcon.addEventListener("click", () => {
+            const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+            window.open(whatsappUrl, "_blank");
+        });
+    }
         // Smooth Scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
