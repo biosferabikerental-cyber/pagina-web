@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - Biosfera Rental Bike</title>
+    <link rel="icon" type="image/png" href="logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --primary-green: #236b1c;
+            --light-green: #e4f3e6;
+            --dark-green: #125516;
+            --white: #FFFFFF;
+            --gray: #333333;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light-gray);
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo h1 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+        .logo span {
+            color: var(--primary-yellow);
+        }
+        /* Selector de idioma */
+        .header-right {
+            display: flex;
+            align-items: center; /* Centra verticalmente todos los elementos */
+            gap: 15px;
+        }
+        .language-selector {
+            display: flex;
+            gap: 8px;
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            width: 38px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lang-btn.active {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+        .lang-btn:hover:not(.active) {
+            background-color: var(--light-green);
+        }
+        /* Contenido legal */
+        .legal-container {
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .legal-container h1 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .legal-container h2 {
+            color: var(--primary-green);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 5px;
+        }
+        .legal-container h3 {
+            color: var(--dark-green);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        .legal-container p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .legal-container ul, .legal-container ol {
+            margin: 15px 0 15px 30px;
+        }
+        .legal-container li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .legal-date {
+            text-align: center;
+            color: var(--dark-green);
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .back-button-container {
+            display: flex;
+            align-items: center; /* Centra verticalmente el botón dentro del contenedor */
+            height: 100%; /* Ocupa toda la altura disponible */
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center; /* Centra verticalmente icono y texto */
+            justify-content: center; /* Centra horizontalmente */
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: var(--transition);
+            height: 40px; /* Altura consistente para mejor alineación */
+            box-sizing: border-box; /* Incluye padding en la altura */
+            white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        }
+        .back-button:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-column h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-column p, .footer-column a {
+            color: var(--white);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            display: flex;
+            align-items: center;
+        }
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--primary-yellow);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .legal-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .legal-container h1 {
+                font-size: 1.5rem;
+            }
+            .legal-container h2 {
+                font-size: 1.3rem;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header-right {
+                flex-direction: column; /* Cambia a columna en móviles */
+                align-items: stretch; /* Elementos ocupan todo el ancho */
+                width: 100%;
+                gap: 10px;
+            }
+            
+            .back-button-container {
+                order: -1; /* Botón primero en móviles */
+                margin-top: 0; /* Elimina el margen superior */
+            }
+            
+            .back-button {
+                width: 100%; /* Botón ocupa todo el ancho */
+                margin-top: 0; /* Elimina el margen superior */
+            }
+            
+            .language-selector {
+                justify-content: center; /* Centra los botones de idioma */
+                width: 100%;
+            }
+        }
+
+        /* En la sección de responsive design, agregar o modificar: */
+        @media (max-width: 1250px) {
+            .language-selector {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                width: 84px;
+                /* 38px * 2 botones + 8px gap */
+            }
+
+            .lang-btn {
+                width: 38px;
+                height: 32px;
+                text-align: center;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 820px) {
+            .language-selector {
+                grid-template-columns: 1fr 1fr;
+                gap: 5px;
+                width: 81px;
+                /* 38px * 2 botones + 5px gap */
+            }
+
+            .lang-btn {
+                width: 38px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .language-selector {
+                width: auto;
+                justify-content: center;
+                grid-template-columns: repeat(4, 38px); /* 4 botones en fila */
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .language-selector {
+                width: auto;
+                grid-template-columns: repeat(4, 38px);
+                gap: 5px;
+            }
+
+            .lang-btn {
+                width: 38px;
+                height: 32px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .language-selector {
+                grid-template-columns: repeat(4, 35px);
+                gap: 3px;
+                width: auto;
+            }
+
+            .lang-btn {
+                width: 35px;
+                height: 30px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Biosfera <span>Rental Bike</span></h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="language-selector">
+                    <button class="lang-btn active" id="lang-es">ES</button>
+                    <button class="lang-btn" id="lang-en">EN</button>
+                    <button class="lang-btn" id="lang-de">DE</button>
+                    <button class="lang-btn" id="lang-fr">FR</button>
+                </div>
+                
+                <div class="back-button-container">
+                    <a href="index.html" class="back-button">
+                        <i class="fas fa-arrow-left"></i> <span data-lang="es">Volver al inicio</span>
+                        <span data-lang="en" style="display: none;">Back to home</span>
+                        <span data-lang="de" style="display: none;">Zurück zur Startseite</span>
+                        <span data-lang="fr" style="display: none;">Retour à l'accueil</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Política de Cookies -->
+    <main class="container">
+        <div class="legal-container">
+            <!-- Español -->
+            <div data-lang="es">
+                <h1>Política de Cookies</h1>
+                <p class="legal-date">Última actualización: 10 de enero de 2024</p>
+                
+                <h2>1. ¿Qué son las cookies?</h2>
+                <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet, smartphone) cuando visita nuestro sitio web. Estas cookies nos ayudan a hacer que el sitio web funcione correctamente y le proporcionan una mejor experiencia de navegación.</p>
+                
+                <h2>2. Tipos de cookies que utilizamos</h2>
+                <p>En Biosfera Rental Bike utilizamos únicamente cookies esenciales y técnicas necesarias para el funcionamiento básico del sitio web:</p>
+                
+                <h3>2.1 Cookies técnicas esenciales</h3>
+                <ul>
+                    <li><strong>Cookie de sesión:</strong> Mantiene su sesión activa mientras navega por nuestro sitio web.</li>
+                    <li><strong>Cookie de preferencias de idioma:</strong> Recuerda su selección de idioma (español, inglés, alemán o francés).</li>
+                    <li><strong>Cookie de seguridad:</strong> Protege nuestro sitio web contra actividades maliciosas.</li>
+                </ul>
+                
+                <h3>2.2 ¿Qué cookies NO utilizamos?</h3>
+                <p>No utilizamos:</p>
+                <ul>
+                    <li>Cookies de análisis (como Google Analytics)</li>
+                    <li>Cookies de publicidad</li>
+                    <li>Cookies de redes sociales</li>
+                    <li>Cookies de seguimiento de terceros</li>
+                </ul>
+                
+                <h2>3. Finalidad de las cookies</h2>
+                <p>Las cookies esenciales que utilizamos tienen las siguientes finalidades:</p>
+                <ul>
+                    <li>Garantizar el correcto funcionamiento del sitio web</li>
+                    <li>Recordar sus preferencias de idioma</li>
+                    <li>Mantener la seguridad del sitio web</li>
+                    <li>Permitir el funcionamiento de formularios de contacto</li>
+                    <li>Facilitar la navegación entre páginas</li>
+                </ul>
+                
+                <h2>4. Control de cookies</h2>
+                <p>Puede controlar y/o eliminar las cookies según desee. Puede eliminar todas las cookies que ya están en su dispositivo y configurar la mayoría de los navegadores para evitar que se coloquen. Sin embargo, si hace esto, es posible que tenga que ajustar manualmente algunas preferencias cada vez que visite nuestro sitio y que algunos servicios y funcionalidades no funcionen.</p>
+                
+                <h3>4.1 Cómo gestionar cookies en su navegador</h3>
+                <p>Para gestionar o desactivar cookies en los navegadores más comunes:</p>
+                <ul>
+                    <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos del sitio</li>
+                    <li><strong>Mozilla Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio</li>
+                    <li><strong>Safari:</strong> Preferencias → Privacidad → Gestión de datos del sitio web</li>
+                    <li><strong>Microsoft Edge:</strong> Configuración → Cookies y permisos del sitio</li>
+                </ul>
+                
+                <h2>5. Cambios en nuestra política de cookies</h2>
+                <p>Podemos actualizar esta política de cookies ocasionalmente para reflejar cambios en nuestras prácticas o por otros motivos operativos, legales o reglamentarios. Le recomendamos que revise periódicamente esta página para conocer cualquier cambio.</p>
+                
+                <h2>6. Contacto</h2>
+                <p>Si tiene alguna pregunta sobre nuestra política de cookies, puede contactarnos:</p>
+                <ul>
+                    <li><strong>Email:</strong> biosferabikerental@gmail.com</li>
+                    <li><strong>Teléfono:</strong> +34 628 514 368</li>
+                    <li><strong>Dirección:</strong> Calle Gramillo 1, C. C Matagorda Local 19, 35519 Tías, Las Palmas</li>
+                </ul>
+            </div>
+
+            <!-- Inglés -->
+            <div data-lang="en" style="display: none;">
+                <h1>Cookie Policy</h1>
+                <p class="legal-date">Last updated: January 10, 2024</p>
+                
+                <h2>1. What are cookies?</h2>
+                <p>Cookies are small text files that are stored on your device (computer, tablet, smartphone) when you visit our website. These cookies help us make the website work properly and provide you with a better browsing experience.</p>
+                
+                <h2>2. Types of cookies we use</h2>
+                <p>At Biosfera Rental Bike we use only essential and technical cookies necessary for the basic functioning of the website:</p>
+                
+                <h3>2.1 Essential technical cookies</h3>
+                <ul>
+                    <li><strong>Session cookie:</strong> Keeps your session active while browsing our website.</li>
+                    <li><strong>Language preference cookie:</strong> Remembers your language selection (Spanish, English, German or French).</li>
+                    <li><strong>Security cookie:</strong> Protects our website from malicious activities.</li>
+                </ul>
+                
+                <h3>2.2 What cookies do we NOT use?</h3>
+                <p>We do not use:</p>
+                <ul>
+                    <li>Analytics cookies (like Google Analytics)</li>
+                    <li>Advertising cookies</li>
+                    <li>Social media cookies</li>
+                    <li>Third-party tracking cookies</li>
+                </ul>
+                
+                <h2>3. Purpose of cookies</h2>
+                <p>The essential cookies we use serve the following purposes:</p>
+                <ul>
+                    <li>Ensure the proper functioning of the website</li>
+                    <li>Remember your language preferences</li>
+                    <li>Maintain website security</li>
+                    <li>Enable contact forms to function</li>
+                    <li>Facilitate navigation between pages</li>
+                </ul>
+                
+                <h2>4. Cookie control</h2>
+                <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your device and set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences each time you visit our site and some services and features may not work.</p>
+                
+                <h3>4.1 How to manage cookies in your browser</h3>
+                <p>To manage or disable cookies in the most common browsers:</p>
+                <ul>
+                    <li><strong>Google Chrome:</strong> Settings → Privacy and security → Cookies and other site data</li>
+                    <li><strong>Mozilla Firefox:</strong> Options → Privacy & Security → Cookies and Site Data</li>
+                    <li><strong>Safari:</strong> Preferences → Privacy → Website data management</li>
+                    <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions</li>
+                </ul>
+                
+                <h2>5. Changes to our cookie policy</h2>
+                <p>We may update this cookie policy occasionally to reflect changes in our practices or for other operational, legal or regulatory reasons. We recommend that you review this page periodically for any changes.</p>
+                
+                <h2>6. Contact</h2>
+                <p>If you have any questions about our cookie policy, you can contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> biosferabikerental@gmail.com</li>
+                    <li><strong>Phone:</strong> +34 628 514 368</li>
+                    <li><strong>Address:</strong> Calle Gramillo 1, C. C Matagorda Local 19, 35519 Tías, Las Palmas</li>
+                </ul>
+            </div>
+
+            <!-- Alemán -->
+            <div data-lang="de" style="display: none;">
+                <h1>Cookie-Richtlinie</h1>
+                <p class="legal-date">Zuletzt aktualisiert: 10. Januar 2024</p>
+                
+                <h2>1. Was sind Cookies?</h2>
+                <p>Cookies sind kleine Textdateien, die auf Ihrem Gerät (Computer, Tablet, Smartphone) gespeichert werden, wenn Sie unsere Website besuchen. Diese Cookies helfen uns, die Website korrekt funktionieren zu lassen und bieten Ihnen ein besseres Browsen-Erlebnis.</p>
+                
+                <h2>2. Arten von Cookies, die wir verwenden</h2>
+                <p>Bei Biosfera Rental Bike verwenden wir nur essentielle und technische Cookies, die für die grundlegende Funktion der Website notwendig sind:</p>
+                
+                <h3>2.1 Essentielle technische Cookies</h3>
+                <ul>
+                    <li><strong>Sitzungs-Cookie:</strong> Hält Ihre Sitzung aktiv, während Sie auf unserer Website surfen.</li>
+                    <li><strong>Spracheinstellungs-Cookie:</strong> Merkt sich Ihre Sprachauswahl (Spanisch, Englisch, Deutsch oder Französisch).</li>
+                    <li><strong>Sicherheits-Cookie:</strong> Schützt unsere Website vor bösartigen Aktivitäten.</li>
+                </ul>
+                
+                <h3>2.2 Welche Cookies verwenden wir NICHT?</h3>
+                <p>Wir verwenden keine:</p>
+                <ul>
+                    <li>Analyse-Cookies (wie Google Analytics)</li>
+                    <li>Werbe-Cookies</li>
+                    <li>Social-Media-Cookies</li>
+                    <li>Cookies von Drittanbietern zur Verfolgung</li>
+                </ul>
+                
+                <h2>3. Zweck der Cookies</h2>
+                <p>Die essentiellen Cookies, die wir verwenden, dienen folgenden Zwecken:</p>
+                <ul>
+                    <li>Sicherstellung der ordnungsgemäßen Funktion der Website</li>
+                    <li>Speicherung Ihrer Spracheinstellungen</li>
+                    <li>Aufrechterhaltung der Websitesicherheit</li>
+                    <li>Ermöglichung der Funktion von Kontaktformularen</li>
+                    <li>Erleichterung der Navigation zwischen Seiten</li>
+                </ul>
+                
+                <h2>4. Cookie-Kontrolle</h2>
+                <p>Sie können Cookies nach Belieben kontrollieren und/oder löschen. Sie können alle Cookies löschen, die sich bereits auf Ihrem Gerät befinden, und die meisten Browser so einstellen, dass sie nicht platziert werden. Wenn Sie dies tun, müssen Sie möglicherweise jedes Mal, wenn Sie unsere Seite besuchen, einige Einstellungen manuell anpassen, und einige Dienste und Funktionen funktionieren möglicherweise nicht.</p>
+                
+                <h3>4.1 So verwalten Sie Cookies in Ihrem Browser</h3>
+                <p>So verwalten oder deaktivieren Sie Cookies in den gängigsten Browsern:</p>
+                <ul>
+                    <li><strong>Google Chrome:</strong> Einstellungen → Datenschutz und Sicherheit → Cookies und andere Websitedaten</li>
+                    <li><strong>Mozilla Firefox:</strong> Einstellungen → Datenschutz & Sicherheit → Cookies und Website-Daten</li>
+                    <li><strong>Safari:</strong> Einstellungen → Datenschutz → Verwaltung von Websitedaten</li>
+                    <li><strong>Microsoft Edge:</strong> Einstellungen → Cookies und Website-Berechtigungen</li>
+                </ul>
+                
+                <h2>5. Änderungen an unserer Cookie-Richtlinie</h2>
+                <p>Wir können diese Cookie-Richtlinie gelegentlich aktualisieren, um Änderungen in unseren Praktiken oder aus anderen betrieblichen, rechtlichen oder regulatorischen Gründen widerzuspiegeln. Wir empfehlen, diese Seite regelmäßig auf Änderungen zu überprüfen.</p>
+                
+                <h2>6. Kontakt</h2>
+                <p>Wenn Sie Fragen zu unserer Cookie-Richtlinie haben, können Sie uns kontaktieren:</p>
+                <ul>
+                    <li><strong>E-Mail:</strong> biosferabikerental@gmail.com</li>
+                    <li><strong>Telefon:</strong> +34 628 514 368</li>
+                    <li><strong>Adresse:</strong> Calle Gramillo 1, C. C Matagorda Local 19, 35519 Tías, Las Palmas</li>
+                </ul>
+            </div>
+
+            <!-- Francés -->
+            <div data-lang="fr" style="display: none;">
+                <h1>Politique des cookies</h1>
+                <p class="legal-date">Dernière mise à jour : 10 janvier 2024</p>
+                
+                <h2>1. Que sont les cookies ?</h2>
+                <p>Les cookies sont de petits fichiers texte stockés sur votre appareil (ordinateur, tablette, smartphone) lorsque vous visitez notre site web. Ces cookies nous aident à faire fonctionner correctement le site web et vous offrent une meilleure expérience de navigation.</p>
+                
+                <h2>2. Types de cookies que nous utilisons</h2>
+                <p>Chez Biosfera Rental Bike, nous n'utilisons que des cookies essentiels et techniques nécessaires au fonctionnement de base du site web :</p>
+                
+                <h3>2.1 Cookies techniques essentiels</h3>
+                <ul>
+                    <li><strong>Cookie de session :</strong> Garde votre session active pendant que vous naviguez sur notre site web.</li>
+                    <li><strong>Cookie de préférence linguistique :</strong> Mémorise votre sélection de langue (espagnol, anglais, allemand ou français).</li>
+                    <li><strong>Cookie de sécurité :</strong> Protège notre site web contre les activités malveillantes.</li>
+                </ul>
+                
+                <h3>2.2 Quels cookies n'utilisons-nous PAS ?</h3>
+                <p>Nous n'utilisons pas :</p>
+                <ul>
+                    <li>Cookies d'analyse (comme Google Analytics)</li>
+                    <li>Cookies publicitaires</li>
+                    <li>Cookies de réseaux sociaux</li>
+                    <li>Cookies de suivi tiers</li>
+                </ul>
+                
+                <h2>3. Finalité des cookies</h2>
+                <p>Les cookies essentiels que nous utilisons servent aux finalités suivantes :</p>
+                <ul>
+                    <li>Garantir le bon fonctionnement du site web</li>
+                    <li>Mémoriser vos préférences linguistiques</li>
+                    <li>Maintenir la sécurité du site web</li>
+                    <li>Permettre le fonctionnement des formulaires de contact</li>
+                    <li>Faciliter la navigation entre les pages</li>
+                </ul>
+                
+                <h2>4. Contrôle des cookies</h2>
+                <p>Vous pouvez contrôler et/ou supprimer les cookies comme vous le souhaitez. Vous pouvez supprimer tous les cookies déjà présents sur votre appareil et configurer la plupart des navigateurs pour empêcher leur placement. Cependant, si vous faites cela, vous devrez peut-être ajuster manuellement certaines préférences à chaque visite de notre site et certains services et fonctionnalités pourraient ne pas fonctionner.</p>
+                
+                <h3>4.1 Comment gérer les cookies dans votre navigateur</h3>
+                <p>Pour gérer ou désactiver les cookies dans les navigateurs les plus courants :</p>
+                <ul>
+                    <li><strong>Google Chrome :</strong> Paramètres → Confidentialité et sécurité → Cookies et autres données des sites</li>
+                    <li><strong>Mozilla Firefox :</strong> Options → Vie privée & sécurité → Cookies et données du site</li>
+                    <li><strong>Safari :</strong> Préférences → Confidentialité → Gestion des données des sites web</li>
+                    <li><strong>Microsoft Edge :</strong> Paramètres → Cookies et autorisations des sites</li>
+                </ul>
+                
+                <h2>5. Modifications de notre politique des cookies</h2>
+                <p>Nous pouvons mettre à jour cette politique des cookies occasionnellement pour refléter les changements dans nos pratiques ou pour d'autres raisons opérationnelles, légales ou réglementaires. Nous vous recommandons de consulter régulièrement cette page pour tout changement.</p>
+                
+                <h2>6. Contact</h2>
+                <p>Si vous avez des questions concernant notre politique des cookies, vous pouvez nous contacter :</p>
+                <ul>
+                    <li><strong>Email :</strong> biosferabikerental@gmail.com</li>
+                    <li><strong>Téléphone :</strong> +34 628 514 368</li>
+                    <li><strong>Adresse :</strong> Calle Gramillo 1, C. C Matagorda Local 19, 35519 Tías, Las Palmas</li>
+                </ul>
+            </div>
+            
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> <span data-lang="es">Volver al inicio</span>
+                <span data-lang="en" style="display: none;">Back to home</span>
+                <span data-lang="de" style="display: none;">Zurück zur Startseite</span>
+                <span data-lang="fr" style="display: none;">Retour à l'accueil</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer con 4 idiomas -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3 data-lang="es">Biosfera Rental Bike</h3>
+                    <h3 data-lang="en" style="display: none;">Biosfera Rental Bike</h3>
+                    <h3 data-lang="de" style="display: none;">Biosfera Rental Bike</h3>
+                    <h3 data-lang="fr" style="display: none;">Biosfera Rental Bike</h3>
+                    <p data-lang="es">Tu mejor opción para alquilar bicicletas y scooters en Lanzarote. Más de 10 años ofreciendo servicios de calidad con los mejores precios.</p>
+                    <p data-lang="en" style="display: none;">Your best option for renting bikes and scooters in Lanzarote. Over 10 years offering quality services with the best prices.</p>
+                    <p data-lang="de" style="display: none;">Ihre beste Option für die Vermietung von Fahrrädern und Scootern in Lanzarote. Über 10 Jahre Erfahrung mit qualitativ hochwertigen Dienstleistungen zu den besten Preisen.</p>
+                    <p data-lang="fr" style="display: none;">Votre meilleure option pour louer des vélos et des scooters à Lanzarote. Plus de 10 ans d'expérience offrant des services de qualité aux meilleurs prix.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 data-lang="es">Enlaces Legales</h3>
+                    <h3 data-lang="en" style="display: none;">Legal Links</h3>
+                    <h3 data-lang="de" style="display: none;">Rechtliche Links</h3>
+                    <h3 data-lang="fr" style="display: none;">Liens légaux</h3>
+                    <ul class="footer-links">
+                        <li><a href="politica-cookies.html"><i class="fas fa-chevron-right"></i> <span data-lang="es">Política de Cookies</span><span data-lang="en" style="display: none;">Cookie Policy</span><span data-lang="de" style="display: none;">Cookie-Richtlinie</span><span data-lang="fr" style="display: none;">Politique des cookies</span></a></li>
+                        <li><a href="politica-privacidad.html"><i class="fas fa-chevron-right"></i> <span data-lang="es">Política de Privacidad</span><span data-lang="en" style="display: none;">Privacy Policy</span><span data-lang="de" style="display: none;">Datenschutzerklärung</span><span data-lang="fr" style="display: none;">Politique de confidentialité</span></a></li>
+                        <li><a href="terminos-condiciones.html"><i class="fas fa-chevron-right"></i> <span data-lang="es">Términos y Condiciones</span><span data-lang="en" style="display: none;">Terms and Conditions</span><span data-lang="de" style="display: none;">Geschäftsbedingungen</span><span data-lang="fr" style="display: none;">Conditions générales</span></a></li>
+                        <li><a href="aviso-legal.html"><i class="fas fa-chevron-right"></i> <span data-lang="es">Aviso Legal</span><span data-lang="en" style="display: none;">Legal Notice</span><span data-lang="de" style="display: none;">Impressum</span><span data-lang="fr" style="display: none;">Mentions légales</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-lang="es">Contacto</h3>
+                    <h3 data-lang="en" style="display: none;">Contact</h3>
+                    <h3 data-lang="de" style="display: none;">Kontakt</h3>
+                    <h3 data-lang="fr" style="display: none;">Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Gramillo 1, C. C Matagorda Local 19, 35519 Tías, Las Palmas</p>
+                    <p><i class="fas fa-phone-alt"></i> +34 628 514 368</p>
+                    <p><i class="fab fa-whatsapp"></i> +34 692 035 563</p>
+                    <p><i class="far fa-envelope"></i> biosferabikerental@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Biosfera Rental Bike. <span data-lang="es">Todos los derechos reservados.</span><span data-lang="en" style="display: none;">All rights reserved.</span><span data-lang="de" style="display: none;">Alle Rechte vorbehalten.</span><span data-lang="fr" style="display: none;">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad de cambio de idioma
+        document.getElementById('lang-es').addEventListener('click', function () {
+            changeLanguage('es');
+        });
+
+        document.getElementById('lang-en').addEventListener('click', function () {
+            changeLanguage('en');
+        });
+
+        document.getElementById('lang-de').addEventListener('click', function () {
+            changeLanguage('de');
+        });
+
+        document.getElementById('lang-fr').addEventListener('click', function () {
+            changeLanguage('fr');
+        });
+
+        function changeLanguage(lang) {
+            // Actualizar botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`lang-${lang}`).classList.add('active');
+
+            // Mostrar/ocultar elementos según el idioma
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = element.tagName === 'BUTTON' || element.tagName === 'A' || element.tagName === 'OPTION' ? 'inline-block' : 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+
+        // Inicializar con español
+        changeLanguage('es');
+    </script>
+</body>
+</html>
